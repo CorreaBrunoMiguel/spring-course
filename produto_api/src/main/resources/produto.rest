@@ -7,3 +7,7 @@ Content-Type: application/json
   "preco": 1670.00
 }
 ###
+
+GET localhost:8080/produtos/gh
+Content-Type: application/json
+###
