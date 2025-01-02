@@ -2,9 +2,8 @@ POST localhost:8080/produtos
 Content-Type: application/json
 
 {
-  "id": "1",
   "nome": "Tv",
-  "descricao": "43 polegadas AOC",
-  "preco": 1400.00,
-  "quantidade": 50
+  "descricao": "43 polegadas Samsung",
+  "preco": 1670.00
 }
+###
