@@ -8,6 +8,10 @@ Content-Type: application/json
 }
 ###
 
-GET localhost:8080/produtos/gh
+GET localhost:8080/produtos/cd51cb70-c6a5-4d83-9724-b4059258f12f
+Content-Type: application/json
+###
+
+DELETE localhost:8080/produtos/cd51cb70-c6a5-4d83-9724-b4059258f12f
 Content-Type: application/json
 ###

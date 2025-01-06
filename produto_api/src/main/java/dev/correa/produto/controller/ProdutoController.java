@@ -2,11 +2,9 @@ package dev.correa.produto.controller;
 
 import dev.correa.produto.model.Produto;
 import dev.correa.produto.repository.ProdutoRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
 import java.util.UUID;
 
 /**
@@ -37,4 +35,8 @@ public class ProdutoController {
 		return produtoRepository.findById(id).orElse(null);
 	}
 	
+	@DeleteMapping("/{id}")
+	public void remover(@PathVariable String id) {
+		produtoRepository.deleteById(id);
+	}
 }
