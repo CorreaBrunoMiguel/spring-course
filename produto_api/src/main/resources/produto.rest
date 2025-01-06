@@ -1,3 +1,7 @@
+@id = 59c253fd-61bc-43b2-8cda-3d438a3523db
+@nome = Tv
+###
+
 POST localhost:8080/produtos
 Content-Type: application/json
 
@@ -8,10 +12,24 @@ Content-Type: application/json
 }
 ###
 
-GET localhost:8080/produtos/cd51cb70-c6a5-4d83-9724-b4059258f12f
+GET localhost:8080/produtos/{{id}}
 Content-Type: application/json
 ###
 
-DELETE localhost:8080/produtos/cd51cb70-c6a5-4d83-9724-b4059258f12f
+DELETE localhost:8080/produtos/{{id}}
+Content-Type: application/json
+###
+
+PUT localhost:8080/produtos/{{id}}
+Content-Type: application/json
+
+{
+  "nome": "Tv",
+  "descricao": "43 polegadas Samsung",
+  "preco": 1650.00
+}
+###
+
+GET localhost:8080/produtos?nome={{nome}}
 Content-Type: application/json
 ###
