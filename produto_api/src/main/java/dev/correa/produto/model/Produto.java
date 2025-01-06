@@ -2,12 +2,7 @@ package dev.correa.produto.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
-
-import static jakarta.persistence.GenerationType.IDENTITY;
 
 /**
  * Autor: Bruno Miguel Correa
@@ -15,19 +10,21 @@ import static jakarta.persistence.GenerationType.IDENTITY;
  * Data: 30/12/2024
  **/
 
-@Setter
-@Getter
 @Entity
 public class Produto {
 	
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
+	@Column(name = "id")
 	private String id;
 	
+	@Column(name = "nome")
 	private String nome;
+	
+	@Column(name = "descricao")
 	private String descricao;
+	
+	@Column(name = "preco")
 	private double preco;
-	private int quantidade;
 	
 	@Override
 	public String toString () {
@@ -36,7 +33,38 @@ public class Produto {
 				", nome='" + nome + '\'' +
 				", descricao='" + descricao + '\'' +
 				", preco=" + preco +
-				", quantidade=" + quantidade +
 				'}';
+	}
+	
+	public String getId () {
+		return id;
+	}
+	
+	public void setId (String id) {
+		this.id = id;
+	}
+	
+	public String getNome () {
+		return nome;
+	}
+	
+	public void setNome (String nome) {
+		this.nome = nome;
+	}
+	
+	public String getDescricao () {
+		return descricao;
+	}
+	
+	public void setDescricao (String descricao) {
+		this.descricao = descricao;
+	}
+	
+	public double getPreco () {
+		return preco;
+	}
+	
+	public void setPreco (double preco) {
+		this.preco = preco;
 	}
 }

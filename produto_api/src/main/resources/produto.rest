@@ -1,10 +1,35 @@
+@id = 59c253fd-61bc-43b2-8cda-3d438a3523db
+@nome = Tv
+###
+
 POST localhost:8080/produtos
 Content-Type: application/json
 
 {
-  "id": "1",
   "nome": "Tv",
-  "descricao": "43 polegadas AOC",
-  "preco": 1400.00,
-  "quantidade": 50
+  "descricao": "43 polegadas Samsung",
+  "preco": 1670.00
 }
+###
+
+GET localhost:8080/produtos/{{id}}
+Content-Type: application/json
+###
+
+DELETE localhost:8080/produtos/{{id}}
+Content-Type: application/json
+###
+
+PUT localhost:8080/produtos/{{id}}
+Content-Type: application/json
+
+{
+  "nome": "Tv",
+  "descricao": "43 polegadas Samsung",
+  "preco": 1650.00
+}
+###
+
+GET localhost:8080/produtos?nome={{nome}}
+Content-Type: application/json
+###
