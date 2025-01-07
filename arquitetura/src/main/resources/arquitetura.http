@@ -1,0 +1,8 @@
+POST localhost:8080/api/ligar
+Content-Type: application/json
+
+{
+  "montadora": "FIAT",
+  "tipo": "bruno"
+}
+###
