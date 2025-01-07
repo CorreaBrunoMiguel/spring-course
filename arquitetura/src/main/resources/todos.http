@@ -1,0 +1,7 @@
+POST localhost:8081/todos
+Content-Type: application/json
+
+{
+  "descricao": "remedio as 23h",
+  "status": false
+}

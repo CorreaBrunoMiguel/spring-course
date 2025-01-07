@@ -17,6 +17,10 @@ public class TodoController {
 	
 	private TodoService todoService;
 	
+	public TodoController (TodoService todoService) {
+		this.todoService = todoService;
+	}
+	
 	@PostMapping
 	public TodoEntity salvar (@RequestBody TodoEntity entity) {
 		return todoService.salvar(entity);
