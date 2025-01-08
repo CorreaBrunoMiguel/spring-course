@@ -15,14 +15,23 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/todos")
 public class TodoController {
 	
-	private TodoService todoService;
+	private final TodoService todoService;
+	private final TodoValidator validator;
 	
-	public TodoController (TodoService todoService) {
+	public TodoController (TodoService todoService, TodoValidator validator) {
 		this.todoService = todoService;
+		this.validator = validator;
 	}
 	
 	@PostMapping
 	public TodoEntity salvar (@RequestBody TodoEntity entity) {
-		return todoService.salvar(entity);
+		try {
+			if (!validator.existeByDescricao(entity.getDescricao())) {
+				return todoService.salvar(entity);
+			}
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		}
+		return null;
 	}
 }
